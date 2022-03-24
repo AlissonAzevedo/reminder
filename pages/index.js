@@ -2,7 +2,18 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
-export default function Home() {
+export async function getStaticProps() {
+  const data = await fetch("https://jsonplaceholder.typicode.com/users");
+  const pessoas = await data.json();
+  // console.log(pessoas);
+  return {
+    props: {
+      pessoas,
+    },
+  };
+}
+
+export default function Home({ pessoas }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -13,160 +24,34 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Reminder</a>
+          Welcome to <a href="#">Reminder</a>
         </h1>
 
-        <p className={styles.description}>
+        {/* <p className={styles.description}>
           Get started by editing{" "}
           <code className={styles.code}>pages/index.js</code>
-        </p>
+        </p> */}
 
         <div className={styles.grid}>
           <div className={styles.card}>
-            <div className={styles.cardItem}>
-              <div className={styles.cardItemIcon}>
-                <Image
-                  src="/icons/calendar.svg"
-                  width="36px"
-                  height="36px"
-                  alt="Calendar"   
-                />            
+            {pessoas.map((pessoa) => (
+              <div key={pessoa.id} className={styles.cardItem}>
+                <div className={styles.cardItemIcon}>
+                  <Image
+                    src="/icons/calendar.svg"
+                    width="36px"
+                    height="36px"
+                    alt="Calendar"
+                  />
+                </div>
+                <span className={styles.cardItemDate}>31</span>
+                <div className={styles.cardItemText}>
+                  <h4 className={styles.text}>{pessoa.name}</h4>
+                  <h4 className={styles.text}>20/04/2002</h4>
+                  <h4 className={styles.text}>19 anos</h4>
+                </div>
               </div>
-              <span className={styles.cardItemDate}>31</span>
-              <div className={styles.cardItemText}>
-                <h4 className={styles.text}>Alisson</h4>
-                <h4 className={styles.text}>20/04/2002</h4>
-                <h4 className={styles.text}>19 anos</h4>
-              </div>
-            </div>
-            <div className={styles.cardItem}>
-              <div className={styles.cardItemIcon}>
-                <Image
-                  src="/icons/calendar.svg"
-                  width="36px"
-                  height="36px"
-                  alt="Calendar"   
-                />            
-              </div>
-              <span className={styles.cardItemDate}>31</span>
-              <div className={styles.cardItemText}>
-                <h4 className={styles.text}>Alisson</h4>
-                <h4 className={styles.text}>20/04/2002</h4>
-                <h4 className={styles.text}>19 anos</h4>
-              </div>
-            </div>
-            <div className={styles.cardItem}>
-              <div className={styles.cardItemIcon}>
-                <Image
-                  src="/icons/calendar.svg"
-                  width="36px"
-                  height="36px"
-                  alt="Calendar"   
-                />            
-              </div>
-              <span className={styles.cardItemDate}>31</span>
-              <div className={styles.cardItemText}>
-                <h4 className={styles.text}>Alisson</h4>
-                <h4 className={styles.text}>20/04/2002</h4>
-                <h4 className={styles.text}>19 anos</h4>
-              </div>
-            </div>
-            <div className={styles.cardItem}>
-              <div className={styles.cardItemIcon}>
-                <Image
-                  src="/icons/calendar.svg"
-                  width="36px"
-                  height="36px"
-                  alt="Calendar"   
-                />            
-              </div>
-              <span className={styles.cardItemDate}>31</span>
-              <div className={styles.cardItemText}>
-                <h4 className={styles.text}>Alisson</h4>
-                <h4 className={styles.text}>20/04/2002</h4>
-                <h4 className={styles.text}>19 anos</h4>
-              </div>
-            </div>
-            <div className={styles.cardItem}>
-              <div className={styles.cardItemIcon}>
-                <Image
-                  src="/icons/calendar.svg"
-                  width="36px"
-                  height="36px"
-                  alt="Calendar"   
-                />            
-              </div>
-              <span className={styles.cardItemDate}>31</span>
-              <div className={styles.cardItemText}>
-                <h4 className={styles.text}>Alisson</h4>
-                <h4 className={styles.text}>20/04/2002</h4>
-                <h4 className={styles.text}>19 anos</h4>
-              </div>
-            </div>
-            <div className={styles.cardItem}>
-              <div className={styles.cardItemIcon}>
-                <Image
-                  src="/icons/calendar.svg"
-                  width="36px"
-                  height="36px"
-                  alt="Calendar"   
-                />            
-              </div>
-              <span className={styles.cardItemDate}>31</span>
-              <div className={styles.cardItemText}>
-                <h4 className={styles.text}>Alisson</h4>
-                <h4 className={styles.text}>20/04/2002</h4>
-                <h4 className={styles.text}>19 anos</h4>
-              </div>
-            </div>
-            <div className={styles.cardItem}>
-              <div className={styles.cardItemIcon}>
-                <Image
-                  src="/icons/calendar.svg"
-                  width="36px"
-                  height="36px"
-                  alt="Calendar"   
-                />            
-              </div>
-              <span className={styles.cardItemDate}>31</span>
-              <div className={styles.cardItemText}>
-                <h4 className={styles.text}>Alisson</h4>
-                <h4 className={styles.text}>20/04/2002</h4>
-                <h4 className={styles.text}>19 anos</h4>
-              </div>
-            </div>
-            <div className={styles.cardItem}>
-              <div className={styles.cardItemIcon}>
-                <Image
-                  src="/icons/calendar.svg"
-                  width="36px"
-                  height="36px"
-                  alt="Calendar"   
-                />            
-              </div>
-              <span className={styles.cardItemDate}>31</span>
-              <div className={styles.cardItemText}>
-                <h4 className={styles.text}>Alisson</h4>
-                <h4 className={styles.text}>20/04/2002</h4>
-                <h4 className={styles.text}>19 anos</h4>
-              </div>
-            </div>
-            <div className={styles.cardItem}>
-              <div className={styles.cardItemIcon}>
-                <Image
-                  src="/icons/calendar.svg"
-                  width="36px"
-                  height="36px"
-                  alt="Calendar"   
-                />            
-              </div>
-              <span className={styles.cardItemDate}>31</span>
-              <div className={styles.cardItemText}>
-                <h4 className={styles.text}>Alisson</h4>
-                <h4 className={styles.text}>20/04/2002</h4>
-                <h4 className={styles.text}>19 anos</h4>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </main>
