@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
 export async function getStaticProps() {
-  const data = await fetch("https://jsonplaceholder.typicode.com/users");
+  const data = await fetch("http://127.0.0.1:5000/pessoas");
   const pessoas = await data.json();
   // console.log(pessoas);
   return {
@@ -12,6 +12,7 @@ export async function getStaticProps() {
     },
   };
 }
+
 
 export default function Home({ pessoas }) {
   return (
@@ -27,11 +28,6 @@ export default function Home({ pessoas }) {
           Welcome to <a href="#">Reminder</a>
         </h1>
 
-        {/* <p className={styles.description}>
-          Get started by editing{" "}
-          <code className={styles.code}>pages/index.js</code>
-        </p> */}
-
         <div className={styles.grid}>
           <div className={styles.card}>
             {pessoas.map((pessoa) => (
@@ -46,9 +42,9 @@ export default function Home({ pessoas }) {
                 </div>
                 <span className={styles.cardItemDate}>31</span>
                 <div className={styles.cardItemText}>
-                  <h4 className={styles.text}>{pessoa.name}</h4>
-                  <h4 className={styles.text}>20/04/2002</h4>
-                  <h4 className={styles.text}>19 anos</h4>
+                  <h4 className={styles.text}>{pessoa.nome}</h4>
+                  <h4 className={styles.text}>{pessoa.data_nascimento}</h4>
+                  <h4 className={styles.text}>idade</h4>
                 </div>
               </div>
             ))}
