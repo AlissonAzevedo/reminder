@@ -1,18 +1,64 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import { formatDistanceToNowStrict } from "date-fns";
+import { ptBR } from "date-fns/locale";
+
+
+export function getAgeByDate(data_nascimento) {
+  return formatDistanceToNowStrict(new Date(data_nascimento), {
+    unit: "year",
+    locale: ptBR,
+  });
+}
 
 export async function getStaticProps() {
-  const data = await fetch("http://127.0.0.1:5000/pessoas");
-  const pessoas = await data.json();
+  // const data = await fetch("http://127.0.0.1:5000/pessoas");
+  // const pessoas = await data.json();
   // console.log(pessoas);
-  return {
+  let pessoas = [
+    {
+      id: 1,
+      nome: "João",
+      data_nascimento: "01/01/2000",
+    },
+    {
+      id: 3,
+      nome: "José",
+      data_nascimento: "01/02/2010",
+    },
+    {
+      id: 5,
+      nome: "Paulo",
+      data_nascimento: "01/01/2015",
+    },
+    {
+      id: 2,
+      nome: "Maria",
+      data_nascimento: "01/01/2007",
+      
+    },
+    {
+      id: 4,
+      nome: "Pedro",
+      data_nascimento: "01/01/2012",
+    },
+    {
+      id: 6,
+      nome: "Joana",
+      data_nascimento: "01/01/2010",
+    }
+  ]
+  pessoas.sort(function (a, b) {
+    return (a.data_nascimento > b.data_nascimento) ? 1 : ((b.data_nascimento > a.data_nascimento) ? -1 : 0); 
+  });
+  return{
     props: {
       pessoas,
     },
+    
   };
 }
-
 
 export default function Home({ pessoas }) {
   return (
@@ -44,7 +90,7 @@ export default function Home({ pessoas }) {
                 <div className={styles.cardItemText}>
                   <h4 className={styles.text}>{pessoa.nome}</h4>
                   <h4 className={styles.text}>{pessoa.data_nascimento}</h4>
-                  <h4 className={styles.text}>idade</h4>
+                  <h4 className={styles.text}>{getAgeByDate(pessoa.data_nascimento)}</h4>
                 </div>
               </div>
             ))}
