@@ -20,7 +20,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 
 ## Getting Started
-Verifique se o <a href="https://nodejs.org/en/">NodeJs</a> instalado na sua maquina </br>
+Verifique se o <a href="https://nodejs.org/en/">NodeJs</a> está instalado na sua maquina </br>
 Se você possui linux, digite o comando:
 ```bash
 sudo apt install nodejs
