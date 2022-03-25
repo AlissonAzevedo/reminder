@@ -20,7 +20,13 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 
 ## Getting Started
-Tenha o <a href="https://nodejs.org/en/">NodeJs</a> instalado na sua maquina
+Verifique se o <a href="https://nodejs.org/en/">NodeJs</a> instalado na sua maquina </br>
+Se você possui linux, digite o comando:
+```bash
+sudo apt install nodejs
+```
+Se possui Windows, instale o <a href="https://nodejs.org/en/">NodeJs</a>.
+
 Com o NodeJs instalado digite o seguinte comando:
 ```bash
 npm install
