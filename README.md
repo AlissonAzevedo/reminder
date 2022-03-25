@@ -21,15 +21,20 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## Getting Started
 Tenha o <a href="https://nodejs.org/en/">NodeJs</a> instalado na sua maquina
-First, run the development server:
-
+Com o NodeJs instalado digite o seguinte comando:
+```bash
+npm install
+# ou
+yarn install
+```
+Quando todas as dependencias forem baixadas, digite o comando:
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra no seu navegador [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
