@@ -27,7 +27,7 @@ sudo apt install nodejs
 ```
 Se possui Windows, instale o <a href="https://nodejs.org/en/">NodeJs</a>.
 
-Com o NodeJs instalado digite o seguinte comando:
+Com o NodeJs instalado, va para a pasta do projeto e digite no terminal o seguinte comando:
 ```bash
 npm install
 # ou
