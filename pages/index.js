@@ -14,42 +14,42 @@ export function getAgeByDate(data_nascimento) {
 
 
 export async function getStaticProps() {
-  // const data = await fetch("http://127.0.0.1:5000/pessoas");
-  // const pessoas = await data.json();
+   const data = await fetch("http://127.0.0.1:5000/pessoas");
+   const pessoas = await data.json();
   // console.log(pessoas);
-  let pessoas = [
-    {
-      id: 1,
-      nome: "João",
-      data_nascimento: "01/01/2000",
-    },
-    {
-      id: 3,
-      nome: "José",
-      data_nascimento: "12/12/2010",
-    },
-    {
-      id: 5,
-      nome: "Paulo",
-      data_nascimento: "11/01/2007",
-    },
-    {
-      id: 2,
-      nome: "Maria",
-      data_nascimento: "10/01/2007",
+  // let pessoas = [
+  //   {
+  //     id: 1,
+  //     nome: "João",
+  //     data_nascimento: "01/01/2000",
+  //   },
+  //   {
+  //     id: 3,
+  //     nome: "José",
+  //     data_nascimento: "12/12/2010",
+  //   },
+  //   {
+  //     id: 5,
+  //     nome: "Paulo",
+  //     data_nascimento: "11/01/2007",
+  //   },
+  //   {
+  //     id: 2,
+  //     nome: "Maria",
+  //     data_nascimento: "10/01/2007",
       
-    },
-    {
-      id: 4,
-      nome: "Pedro",
-      data_nascimento: "01/01/2012",
-    },
-    {
-      id: 6,
-      nome: "Joana",
-      data_nascimento: "01/01/2010",
-    }
-  ]
+  //   },
+  //   {
+  //     id: 4,
+  //     nome: "Pedro",
+  //     data_nascimento: "01/01/2012",
+  //   },
+  //   {
+  //     id: 6,
+  //     nome: "Joana",
+  //     data_nascimento: "01/01/2010",
+  //   }
+  // ]
  
   pessoas.sort(function (a, b) {
     return (a.data_nascimento > b.data_nascimento) ? 1 : ((b.data_nascimento > a.data_nascimento) ? -1 : 0); 
