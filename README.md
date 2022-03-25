@@ -20,7 +20,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 
 ## Getting Started
-
+Tenha o <a href"https://nodejs.org/en/">NodeJs</a> instalado na sua maquina
 First, run the development server:
 
 ```bash
