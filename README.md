@@ -9,17 +9,17 @@
 
 
 
-## 🚀 Tecnologias
+# 🚀 Tecnologias
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - Next.js
 - API Flask <a href="#">Reminder</a>
 
 
-## 💻 Projeto
+# 💻 Projeto
 
 
-# Getting Started
+## Getting Started
 
 First, run the development server:
 
