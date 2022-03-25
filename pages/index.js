@@ -12,6 +12,7 @@ export function getAgeByDate(data_nascimento) {
   });
 }
 
+
 export async function getStaticProps() {
   // const data = await fetch("http://127.0.0.1:5000/pessoas");
   // const pessoas = await data.json();
@@ -25,17 +26,17 @@ export async function getStaticProps() {
     {
       id: 3,
       nome: "José",
-      data_nascimento: "01/02/2010",
+      data_nascimento: "12/12/2010",
     },
     {
       id: 5,
       nome: "Paulo",
-      data_nascimento: "01/01/2015",
+      data_nascimento: "11/01/2007",
     },
     {
       id: 2,
       nome: "Maria",
-      data_nascimento: "01/01/2007",
+      data_nascimento: "10/01/2007",
       
     },
     {
@@ -49,6 +50,7 @@ export async function getStaticProps() {
       data_nascimento: "01/01/2010",
     }
   ]
+ 
   pessoas.sort(function (a, b) {
     return (a.data_nascimento > b.data_nascimento) ? 1 : ((b.data_nascimento > a.data_nascimento) ? -1 : 0); 
   });
@@ -86,7 +88,6 @@ export default function Home({ pessoas }) {
                     alt="Calendar"
                   />
                 </div>
-                <span className={styles.cardItemDate}>31</span>
                 <div className={styles.cardItemText}>
                   <h4 className={styles.text}>{pessoa.nome}</h4>
                   <h4 className={styles.text}>{pessoa.data_nascimento}</h4>
