@@ -1,6 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center"> 
+  Reminder
+</h1>
 
-## Getting Started
+<p align="center">
+  <a href="https://ibb.co/j8bJ2Nk"><img src="https://i.ibb.co/dfjmqT4/Captura-de-Tela-31.png" alt="tela reminder" border="0"></a>  
+</p>
+
+
+
+
+## 🚀 Tecnologias
+Esse projeto foi desenvolvido com as seguintes tecnologias:
+
+- Next.js
+- API Flask <a href="#">Reminder</a>
+
+
+## 💻 Projeto
+
+
+# Getting Started
 
 First, run the development server:
 
